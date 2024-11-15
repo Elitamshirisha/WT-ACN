@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="cart2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\BABITHA\Downloads\bookstore2.png" alt="Book Store Logo" class="logo-img">
+            Online Book Store
+        </div>
+        <nav>
+            <a href="cat2.html">Catalogue</a>
+            <a href="#">Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Your Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <div class="total">
+            <h3 id="total-price">Total: Rs 0.00</h3>
+        </div>
+        <button class="checkout-button">Checkout</button>
+    </main>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = document.getElementById('cart-items');
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.title}</td>
+                    <td>${item.author}</td>
+                    <td>${item.publisher}</td>
+                    <td>Rs ${item.price}</td>
+                `;
+                cartItems.appendChild(row);
+                totalPrice += item.price;
+            });
+
+            document.getElementById('total-price').innerText = `Total: Rs ${totalPrice.toFixed(2)}`;
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

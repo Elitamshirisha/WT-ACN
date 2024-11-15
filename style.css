@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8b0a50;
+    padding: 10px;
+}
+
+.logo-img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 40px; /* Adds space between the image and the text */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.site-name {
+    font-size: 30px;
+    color: #f4f4f4;
+}
+
+.nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #121212;
+}
+
+.container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.left-frame {
+    font-size: 25px;
+    width: 20%;
+    background-color:#bebebe ;
+    padding: 10px;
+}
+
+.right-frame {
+    width: 75%;
+    padding: 20px;
+}
+
+h3 {
+    margin-top: 0;
+}
